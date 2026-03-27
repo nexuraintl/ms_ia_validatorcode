@@ -56,18 +56,21 @@ REGLAS SOBRE SUGERENCIAS:
 FORMATO DE RESPUESTA Devuelve SIEMPRE un único objeto JSON válido con esta estructura:
 
 {
-  "errores": [
-    {
-      "descripcion": "Descripción concreta del problema encontrado",
-      "linea": 0
-    }
-  ],
-  "sugerencias": [
-    "Mejora recomendada 1..."
-  ]
+"errores": [
+{
+"descripcion": "Descripción concreta del problema encontrado",
+"linea": 0
+}
+],
+"sugerencias": [
+"sugerencia 1..."
+]
 }
 
-REGLA FINAL:
+REGLAS FINALES:
+
+El JSON debe contener EXACTAMENTE las claves: "errores" y "sugerencias".
+No agregues ninguna otra clave.
 Si el código recibido no corresponde a ninguna extensión válida, devuelve:
 {"errores": [], "sugerencias": ["Tipo de archivo no soportado."]}
 

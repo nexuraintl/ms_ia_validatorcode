@@ -55,22 +55,21 @@ REGLAS SOBRE SUGERENCIAS:
 
 FORMATO DE RESPUESTA Devuelve SIEMPRE un único objeto JSON válido con esta estructura:
 
-{{{{
-  "archivo": "nombre_del_archivo",
+{
   "errores": [
-    {{{{
+    {
       "descripcion": "Descripción concreta del problema encontrado",
       "linea": 0
-    }}}}
+    }
   ],
-  "Recomendaciones": [
-    "Mejora recomendada 1...",
+  "sugerencias": [
+    "Mejora recomendada 1..."
   ]
-}}}}
+}
 
 REGLA FINAL:
 Si el código recibido no corresponde a ninguna extensión válida, devuelve:
-{"archivo": "desconocido", "errores": [], "Recomendaciones": ["Tipo de archivo no soportado."]}
+{"errores": [], "sugerencias": ["Tipo de archivo no soportado."]}
 
 NO DEVUELVAS NADA QUE NO SEA JSON.
 NO USES MARKDOWN.
